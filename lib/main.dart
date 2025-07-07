@@ -5,6 +5,8 @@ void main() {
 }
 
 class IslamyApp extends StatelessWidget {
+  const IslamyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
