@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_app/widgets/app_theam.dart';
+import 'package:islamy_app/widgets/intro_screen.dart';
 
 void main() {
   runApp(IslamyApp());
@@ -11,10 +13,10 @@ class IslamyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(title: Text('Islamy')),
-        body: Center(child: Text('Welcome to Islamy!')),
-      ),
+      title: 'Islamy App',
+      routes: {IntroScreen.routeName: (context) => IntroScreen()},
+      initialRoute: IntroScreen.routeName,
+      theme: AppTheam.appTheme,
     );
   }
 }
