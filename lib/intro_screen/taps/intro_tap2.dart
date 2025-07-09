@@ -22,6 +22,7 @@ class IntroTap2 extends StatelessWidget {
           ).textTheme.headlineSmall!.copyWith(color: AppTheam.primaryColor),
         ),
         Text(
+          textAlign: TextAlign.center,
           'We Are Very Excited To Have You In Our Community',
           style: Theme.of(
             context,
