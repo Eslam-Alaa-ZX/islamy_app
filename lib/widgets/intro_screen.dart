@@ -5,10 +5,11 @@ import 'package:islamy_app/intro_screen/taps/intro_tap3.dart';
 import 'package:islamy_app/intro_screen/taps/intro_tap4.dart';
 import 'package:islamy_app/intro_screen/taps/intro_tap5.dart';
 import 'package:islamy_app/widgets/app_theam.dart';
+import 'package:islamy_app/widgets/home_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class IntroScreen extends StatefulWidget {
-  static const String routeName = '/intro';
+  static const String routeName = '/Intro_Page';
 
   @override
   State<IntroScreen> createState() => _IntroScreenState();
@@ -37,7 +38,7 @@ class _IntroScreenState extends State<IntroScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(
-              'assets/header.png',
+              'assets/images/header.png',
               fit: BoxFit.fitHeight,
               height: MediaQuery.of(context).size.height * 0.18,
             ),
@@ -97,7 +98,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         onPressed: () {
                           Navigator.pushReplacementNamed(
                             context,
-                            '/home',
+                            HomePage.routeName,
                           ); // Navigate to home screen
                         },
                         child: Text(

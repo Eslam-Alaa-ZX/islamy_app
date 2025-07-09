@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_app/widgets/app_theam.dart';
+import 'package:islamy_app/widgets/home_page.dart';
 import 'package:islamy_app/widgets/intro_screen.dart';
 
 void main() {
@@ -14,7 +15,10 @@ class IslamyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Islamy App',
-      routes: {IntroScreen.routeName: (context) => IntroScreen()},
+      routes: {
+        IntroScreen.routeName: (context) => IntroScreen(),
+        HomePage.routeName: (context) => HomePage(),
+      },
       initialRoute: IntroScreen.routeName,
       theme: AppTheam.appTheme,
     );
