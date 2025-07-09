@@ -22,6 +22,7 @@ class IntroTap5 extends StatelessWidget {
           ).textTheme.headlineSmall!.copyWith(color: AppTheam.primaryColor),
         ),
         Text(
+          textAlign: TextAlign.center,
           'You can listen to the Holy Quran Radio through the application for free and easily',
           style: Theme.of(
             context,

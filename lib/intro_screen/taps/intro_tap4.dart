@@ -22,6 +22,7 @@ class IntroTap4 extends StatelessWidget {
           ).textTheme.headlineSmall!.copyWith(color: AppTheam.primaryColor),
         ),
         Text(
+          textAlign: TextAlign.center,
           'Praise the name of your Lord, the Most High',
           style: Theme.of(
             context,
