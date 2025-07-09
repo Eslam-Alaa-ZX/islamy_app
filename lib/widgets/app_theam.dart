@@ -6,6 +6,13 @@ class AppTheam {
   static Color white = Color(0xFFFFFFFF);
 
   static ThemeData appTheme = ThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: primaryColor,
+      showUnselectedLabels: false,
+      selectedItemColor: white,
+      selectedLabelStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+      type: BottomNavigationBarType.fixed,
+    ),
     appBarTheme: AppBarTheme(
       backgroundColor: black,
       centerTitle: true,
@@ -18,6 +25,7 @@ class AppTheam {
     ),
     primaryColor: primaryColor,
     scaffoldBackgroundColor: black,
+
     textTheme: TextTheme(
       labelMedium: TextStyle(
         color: white,

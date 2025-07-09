@@ -19,7 +19,7 @@ class IslamyApp extends StatelessWidget {
         IntroScreen.routeName: (context) => IntroScreen(),
         HomePage.routeName: (context) => HomePage(),
       },
-      initialRoute: IntroScreen.routeName,
+      initialRoute: HomePage.routeName,
       theme: AppTheam.appTheme,
     );
   }
