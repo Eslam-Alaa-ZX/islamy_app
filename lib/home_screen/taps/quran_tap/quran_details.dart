@@ -8,20 +8,40 @@ class QuranDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Sura sura= ModalRoute.of(context)!.settings.arguments as Sura;
+    Sura sura = ModalRoute.of(context)!.settings.arguments as Sura;
     return Scaffold(
       appBar: AppBar(
-        title: Text(sura.englishName,style: Theme.of(context).textTheme.titleLarge!.copyWith(color: AppTheam.primaryColor),),
+        title: Text(
+          sura.englishName,
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(color: AppTheam.primaryColor),
+        ),
       ),
       body: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-            Image.asset("assets/images/details_l.png",fit: BoxFit.contain,height: MediaQuery.of(context).size.height*0.4),
-            Text(sura.arabicName,style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: AppTheam.primaryColor),),
-            Image.asset("assets/images/details_r.png",fit: BoxFit.contain,),
-          ],),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset("assets/images/details_l.png", fit: BoxFit.fill),
+                Text(
+                  sura.arabicName,
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    color: AppTheam.primaryColor,
+                  ),
+                ),
+                Image.asset("assets/images/details_r.png", fit: BoxFit.fill),
+              ],
+            ),
+          ),
+          Spacer(),
+          Image.asset(
+            "assets/images/details_b.png",
+            fit: BoxFit.fill,
+            height: MediaQuery.of(context).size.height * 0.13,
+          ),
         ],
       ),
     );
