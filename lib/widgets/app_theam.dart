@@ -6,6 +6,35 @@ class AppTheam {
   static Color white = Color(0xFFFFFFFF);
 
   static ThemeData appTheme = ThemeData(
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: black.withValues(alpha: 0.7),
+      hintStyle: TextStyle(
+        color: white,
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide.none,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: primaryColor,
+          width: 1,
+          style: BorderStyle.solid,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: primaryColor,
+          width: 1,
+          style: BorderStyle.solid,
+        ),
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: primaryColor,
       showUnselectedLabels: false,

@@ -1,6 +1,6 @@
-
-class QuranData{
-  static const List<String> englishSuraNames =["Al-Fatiha",
+class QuranData {
+  static const List<String> englishSuraNames = [
+    "Al-Fatiha",
     "Al-Baqarah",
     "Aal-E-Imran",
     "An-Nisa'",
@@ -113,8 +113,10 @@ class QuranData{
     "Al-Masad",
     "Al-Ikhlas",
     "Al-Falaq",
-    "An-Nas"];
-  static const List<String> arabicSuraNames =[ "الفاتحه",
+    "An-Nas",
+  ];
+  static const List<String> arabicSuraNames = [
+    "الفاتحه",
     "البقرة",
     "آل عمران",
     "النساء",
@@ -227,8 +229,10 @@ class QuranData{
     "المسد",
     "الإخلاص",
     "الفلق",
-    "الناس"];
-  static const List<int> numberOfVerses =[ 7,
+    "الناس",
+  ];
+  static const List<int> numberOfVerses = [
+    7,
     286,
     200,
     176,
@@ -341,18 +345,45 @@ class QuranData{
     5,
     4,
     5,
-    6];
-  static List<Sura> quranSuras =List.generate(114, (index) => makeSuraItem(index));
+    6,
+  ];
+  static List<Sura> quranSuras = List.generate(
+    114,
+    (index) => makeSuraItem(index),
+  );
 
-  static Sura makeSuraItem(int index){
-    return Sura(arabicName: arabicSuraNames[index], englishName: englishSuraNames[index], numberOfVerses: numberOfVerses[index],suraNumber: index+1);
+  static Sura makeSuraItem(int index) {
+    return Sura(
+      arabicName: arabicSuraNames[index],
+      englishName: englishSuraNames[index],
+      numberOfVerses: numberOfVerses[index],
+      suraNumber: index + 1,
+    );
+  }
+
+  static void surasSearch(String suraName) {
+    quranSuras.clear();
+    for (int i = 0; i < 114; i++) {
+      if (arabicSuraNames[i].contains(suraName) ||
+          englishSuraNames[i]
+              .toLowerCase()
+              .replaceAll("-", "")
+              .contains(suraName)) {
+        quranSuras.add(makeSuraItem(i));
+      }
+    }
   }
 }
 
-class Sura{
+class Sura {
   String arabicName;
   String englishName;
   int numberOfVerses;
   int suraNumber;
-  Sura({required this.arabicName,required this.englishName,required this.numberOfVerses,required this.suraNumber});
+  Sura({
+    required this.arabicName,
+    required this.englishName,
+    required this.numberOfVerses,
+    required this.suraNumber,
+  });
 }
