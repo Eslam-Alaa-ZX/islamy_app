@@ -81,6 +81,11 @@ class AppTheam {
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
+      displaySmall: TextStyle(
+        color: white,
+        fontSize: 36,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 }
