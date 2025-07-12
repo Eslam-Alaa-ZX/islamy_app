@@ -23,6 +23,7 @@ class SuraItem extends StatelessWidget {
       child: Row(
         children: [
           Container(
+            width: 75,
             margin: EdgeInsets.only(right: 24),
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -34,6 +35,7 @@ class SuraItem extends StatelessWidget {
             child: Text(
               "${suraData.suraNumber}",
               style: Theme.of(context).textTheme.titleLarge,
+              textAlign: TextAlign.center,
             ),
           ),
           Column(
