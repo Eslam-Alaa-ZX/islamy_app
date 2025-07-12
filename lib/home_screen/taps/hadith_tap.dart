@@ -3,7 +3,7 @@ import 'package:islamy_app/widgets/app_theam.dart';
 
 class HadithTap extends StatelessWidget {
   static const String backgroundImage = 'assets/images/background_hadith.png';
-  HadithTap({super.key});
+  const HadithTap({super.key});
 
   @override
   Widget build(BuildContext context) {
