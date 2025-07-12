@@ -5,17 +5,20 @@ import 'package:islamy_app/home_screen/taps/quran_tap/quran_details.dart';
 
 class SuraItem extends StatelessWidget {
   Sura suraData;
-  SuraItem({super.key, required this.suraData});
+  VoidCallback refresh;
+  SuraItem({super.key, required this.suraData, required this.refresh});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.pushNamed(
+      onTap: () async {
+        await Navigator.pushNamed(
           context,
           QuranDetails.routeName,
           arguments: suraData,
         );
+        QuranData.addMostResentSura(suraData);
+        refresh();
       },
       child: Row(
         children: [

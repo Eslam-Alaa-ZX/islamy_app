@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:islamy_app/home_screen/taps/quran_tap/most_reasent.dart';
 import 'package:islamy_app/home_screen/taps/quran_tap/quran_data.dart';
 import 'package:islamy_app/home_screen/taps/quran_tap/sura_item.dart';
 import 'package:islamy_app/widgets/app_theam.dart';
@@ -42,6 +43,7 @@ class _QuranTapState extends State<QuranTap> {
             ),
           ),
         ),
+        if (QuranData.mostResentSuras.isNotEmpty) MostReasent(),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
           child: Text(
@@ -56,7 +58,12 @@ class _QuranTapState extends State<QuranTap> {
             padding: EdgeInsets.symmetric(horizontal: 16),
             itemCount: QuranData.quranSuras.length,
             itemBuilder: (context, index) {
-              return SuraItem(suraData: QuranData.quranSuras[index]);
+              return SuraItem(
+                suraData: QuranData.quranSuras[index],
+                refresh: () {
+                  setState(() {});
+                },
+              );
             },
             separatorBuilder: (context, index) {
               return Divider(

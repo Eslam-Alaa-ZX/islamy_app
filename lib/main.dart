@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_app/home_screen/taps/quran_tap/quran_data.dart';
 import 'package:islamy_app/home_screen/taps/quran_tap/quran_details.dart';
 import 'package:islamy_app/widgets/app_theam.dart';
 import 'package:islamy_app/widgets/home_page.dart';
 import 'package:islamy_app/widgets/intro_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await QuranData.getFromShardPref();
   runApp(IslamyApp());
 }
 

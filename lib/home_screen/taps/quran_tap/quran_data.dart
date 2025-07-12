@@ -1,3 +1,5 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
 class QuranData {
   static const List<String> englishSuraNames = [
     "Al-Fatiha",
@@ -351,6 +353,7 @@ class QuranData {
     114,
     (index) => makeSuraItem(index),
   );
+  static List<Sura> mostResentSuras = [];
 
   static Sura makeSuraItem(int index) {
     return Sura(
@@ -372,6 +375,35 @@ class QuranData {
         quranSuras.add(makeSuraItem(i));
       }
     }
+  }
+
+  static void addMostResentSura(Sura mostResentSura) {
+    if (mostResentSuras.any(
+      (sura) => sura.suraNumber == mostResentSura.suraNumber,
+    )) {
+      return;
+    }
+    mostResentSuras.insert(0, mostResentSura);
+    addToShardPref();
+  }
+
+  static Future<void> addToShardPref() async {
+    SharedPreferences shared = await SharedPreferences.getInstance();
+    List<String> mostReasenSurasNumber = mostResentSuras
+        .map((sura) => sura.suraNumber.toString())
+        .toList();
+    shared.setStringList("mostReasentSuras", mostReasenSurasNumber);
+  }
+
+  static Future<void> getFromShardPref() async {
+    SharedPreferences shared = await SharedPreferences.getInstance();
+    List<String>? mostReasenSurasNumber = shared.getStringList(
+      "mostReasentSuras",
+    );
+    if (mostReasenSurasNumber == null) return;
+    mostResentSuras = mostReasenSurasNumber
+        .map((suraNumber) => makeSuraItem(int.parse(suraNumber) - 1))
+        .toList();
   }
 }
 
