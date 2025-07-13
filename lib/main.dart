@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_app/home_screen/taps/hadith_tap/hadith_details.dart';
 import 'package:islamy_app/home_screen/taps/quran_tap/quran_data.dart';
 import 'package:islamy_app/home_screen/taps/quran_tap/quran_details.dart';
 import 'package:islamy_app/widgets/app_theam.dart';
@@ -23,6 +24,7 @@ class IslamyApp extends StatelessWidget {
         IntroScreen.routeName: (context) => IntroScreen(),
         HomePage.routeName: (context) => HomePage(),
         QuranDetails.routeName: (context) => QuranDetails(),
+        HadithDetails.routeName: (context) => HadithDetails(),
       },
       initialRoute: HomePage.routeName,
       theme: AppTheam.appTheme,
